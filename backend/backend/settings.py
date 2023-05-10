@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pythonpaperlib.apps.PythonpaperlibConfig',
+    'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

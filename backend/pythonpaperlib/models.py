@@ -1,9 +1,9 @@
 from django.db import models
 
 
-class PaperLib(models.Model):
+class Magazine(models.Model):
     Id = models.AutoField(primary_key=True)
-    Lp = models.IntegerField()
+    Czasopismo = models.CharField(max_length=100)
     Nr = models.IntegerField()
     Data = models.DateField()
     Dzial = models.CharField(max_length=100)

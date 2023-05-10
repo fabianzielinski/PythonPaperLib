@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Magazine
 
-# Register your models here.
+models_list = [Magazine]
+admin.site.register(models_list)
