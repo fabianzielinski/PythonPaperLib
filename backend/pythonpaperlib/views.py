@@ -32,3 +32,18 @@ class MagazineView(APIView):
             serializer.save()
             return JsonResponse("Magazine Added Successfully",          safe=False)
         return JsonResponse("Failed to Add Magazine", safe=False)
+
+    def put(self, request, pk=None):
+        magazine_to_update = Magazine.objects.get(Id=pk)
+        serializer = MagazineSerializer(
+            instance=magazine_to_update, data=request.data, partial=True)
+
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse("Magazine updated Successfully", safe=False)
+        return JsonResponse("Failed To Update Magazine")
+
+    def delete(self, request, pk):
+        magazine_to_delete = Magazine.objects.get(Id=pk)
+        magazine_to_delete.delete()
+        return JsonResponse("Magazine Deleted Successfully", safe=False)
